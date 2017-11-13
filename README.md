@@ -20,6 +20,8 @@ then updates from the `master` branch can be obtained via
 git pull upstream master
 ```
 
+My `master` fork contains my production theme that is deployed to my website.  I'm reserving the `develop` branch for pull requests to Tranquilpeak's repository, and have therefore created a `develop-zacbook` branch that contains my modifications to the theme.
+
 ## Alpha/Beta versions
 
 **ATTENTION** during *alpha* or *beta* [versions](https://github.com/kakawait/hugo-tranquilpeak-theme/milestones) breaking changes are possible on config file.
