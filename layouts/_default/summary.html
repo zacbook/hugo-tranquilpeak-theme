@@ -39,6 +39,13 @@
       </h1>
       {{ partial "post/meta" . }}
     </div>
+    {{ if and (.Scratch.Get "thumbnailImage") (eq (.Scratch.Get "thumbnailImagePosition") "bottom")}}
+      <a href="{{ .Permalink }}">
+        <div class="postShorten-thumbnailimg">
+          <img alt="" itemprop="image" src="{{ .Scratch.Get "thumbnailImage" }}"/>
+        </div>
+      </a>
+    {{ end }}
     <div class="postShorten-excerpt" itemprop="articleBody">
       {{ if .Params.Summary }}
         {{ .Params.Summary | markdownify }}
@@ -55,7 +62,7 @@
       </p>
     </div>
   </div>
-  {{ if and (.Scratch.Get "thumbnailImage") (ne (.Scratch.Get "thumbnailImagePosition") "top")}}
+  {{ if and (.Scratch.Get "thumbnailImage") (and (ne (.Scratch.Get "thumbnailImagePosition") "top") (ne (.Scratch.Get "thumbnailImagePosition") "bottom"))}}
     <a href="{{ .Permalink }}">
       <div class="postShorten-thumbnailimg">
         <img alt="" itemprop="image" src="{{ .Scratch.Get "thumbnailImage" }}"/>
